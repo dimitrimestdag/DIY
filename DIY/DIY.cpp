@@ -15,7 +15,7 @@ int main()
 	char reponce, oui ='o';
 	cout << "Entrer la capacite de votre recipient (en mL) : ";
 	cin >> recipient;
-	cout << "Voulez vous choisir le pourcentage d'arome ? (oui/non) : ";
+	cout << "Voulez vous choisir le pourcentage d'arome ? (o/n) : ";
 	cin >> reponce;
 	if (reponce == oui)
 	{
