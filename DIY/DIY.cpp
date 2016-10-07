@@ -10,9 +10,9 @@ using namespace std;
 int main()
 {
 	double recipient, totalbase, totalconcentre, base, concentre;
-	base = 90. / 100.;
-	concentre = 10. / 100.;
-	int reponce,oui='oui';
+	base = 85. / 100.;
+	concentre = 15. / 100.;
+	char reponce, oui ='o';
 	cout << "Entrer la capacite de votre recipient (en mL) : ";
 	cin >> recipient;
 	cout << "Voulez vous choisir le pourcentage d'arome ? (oui/non) : ";
@@ -25,10 +25,10 @@ int main()
 	}
 	else
 	{
-		cout << "Calcul par defaut avec 90% de base et 10% de concentre ..." << endl;
+		cout << "Calcul par defaut avec 85% de base et 15% de concentre ..." << endl;
 	}
-	totalbase = recipient*base;
 	totalconcentre = recipient*concentre;
+	totalbase = recipient-totalconcentre;
 
 	cout << "Dans votre recipient de " << recipient << "mL, vous devrez mettre " << totalbase << " mL de base et " << totalconcentre << " mL de concentre" <<endl;
 	system("PAUSE");
