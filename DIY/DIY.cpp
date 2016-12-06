@@ -1,41 +1,44 @@
-// DIY.cpp : définit le point d'entrée pour l'application console.
+// DIY.cpp : définit le point d'entrée pour l'application console.
 //
 
 //#include "stdafx.h"
 #include <iostream>
-#include <stdlib.h>
-#include <stdio.h>
+//#include <stdlib.h>
+//#include <stdio.h>
 
 using namespace std;
 
 int main()
 {
 	double recipient, totalbase, totalconcentre, base, concentre;
-	base = 90. / 100.;
-	concentre = 10. / 100.;
-	char reponce, oui='o',non='n';
-	//string oui = 'oui';
+	base = 80. / 100.;
+	concentre = 20. / 100.;
+	//char reponse oui='o',non='n';
+	string reponse, oui = "oui", non="non";
 	cout << "Entrer la capacite de votre recipient (en mL) : ";
 	cin >> recipient;
 
 	//do
 	//{
 		cout << "Voulez vous choisir le pourcentage d'arome ? (oui/non) : ";
-		cin >> reponce;
-		if (reponce == oui)
+		cin >> reponse;
+		if (reponse == oui)
 		{
 			cout << "Entrer le pourcentage d'arome voulu : ";
 			cin >> concentre;
-			concentre = concentre / 100;
+			base = 100-concentre;
+            concentre /= 100;
+            base/=100;
+
 		}
-		else if (reponce == non)
+		else if (reponse == non)
 		{
 			cout << "Calcul par defaut avec " << base * 100 << "% de base et " << concentre * 100 << " % de concentre ..." << endl;
 		}
 		else
 			cout << "Veuillez entrer oui ou non ";
 	//}
-	//while (reponce == oui || reponce == non);
+	//while (reponse == oui || reponse == non);
 	totalbase = recipient*base;
 	totalconcentre = recipient*concentre;
 
